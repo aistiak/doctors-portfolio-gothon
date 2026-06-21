@@ -19,7 +19,7 @@ export default function Hero() {
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          <div>
+          <div className="order-2 lg:order-1">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-teal-200 bg-white/80 px-4 py-2 text-sm font-medium text-teal-700 shadow-sm backdrop-blur-sm">
               <Award className="h-4 w-4" />
               {doctor.designation} · {doctor.hospital}
@@ -75,7 +75,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="relative mx-auto w-full max-w-md lg:max-w-none">
+          <div className="relative order-1 mx-auto w-full max-w-md lg:order-2 lg:max-w-none">
             <div className="relative">
               <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-teal-400/20 to-cyan-400/20 blur-xl" />
               <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-teal-600 to-cyan-700 p-1 shadow-2xl shadow-teal-600/20">
