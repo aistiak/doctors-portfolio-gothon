@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   Award,
   MapPin,
@@ -78,25 +79,34 @@ export default function Hero() {
             <div className="relative">
               <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-teal-400/20 to-cyan-400/20 blur-xl" />
               <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-teal-600 to-cyan-700 p-1 shadow-2xl shadow-teal-600/20">
-                <div className="flex aspect-[4/5] flex-col items-center justify-center rounded-[1.35rem] bg-gradient-to-br from-slate-100 to-teal-50 p-8">
-                  <div className="flex h-40 w-40 items-center justify-center rounded-full bg-gradient-to-br from-teal-500 to-cyan-600 text-6xl font-bold text-white shadow-xl">
-                    TT
+                <div className="overflow-hidden rounded-[1.35rem] bg-gradient-to-br from-slate-100 to-teal-50">
+                  <div className="relative aspect-[450/350] w-full">
+                    <Image
+                      src={doctor.image}
+                      alt={doctor.name}
+                      fill
+                      priority
+                      className="object-cover object-top"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
                   </div>
-                  <p className="mt-6 text-center text-lg font-bold text-slate-800">
-                    Dr. Md. Tuhin Talukder
-                  </p>
-                  <p className="mt-1 text-center text-sm text-teal-600">
-                    General & Hepatobiliary Surgeon
-                  </p>
-                  <div className="mt-6 flex flex-wrap justify-center gap-2">
-                    {doctor.specialties.slice(0, 3).map((s) => (
-                      <span
-                        key={s}
-                        className="rounded-full bg-white px-3 py-1 text-xs font-medium text-slate-600 shadow-sm"
-                      >
-                        {s}
-                      </span>
-                    ))}
+                  <div className="border-t border-teal-100 bg-white/90 px-6 py-5 backdrop-blur-sm">
+                    <p className="text-center text-lg font-bold text-slate-800">
+                      {doctor.name}
+                    </p>
+                    <p className="mt-1 text-center text-sm text-teal-600">
+                      {doctor.title}
+                    </p>
+                    <div className="mt-4 flex flex-wrap justify-center gap-2">
+                      {doctor.specialties.slice(0, 3).map((s) => (
+                        <span
+                          key={s}
+                          className="rounded-full bg-teal-50 px-3 py-1 text-xs font-medium text-teal-700"
+                        >
+                          {s}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>

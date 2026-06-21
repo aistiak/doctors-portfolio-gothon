@@ -1,4 +1,5 @@
 export const doctor = {
+  image: "/images/doctor/tuhin.png",
   name: "Dr. Md. Tuhin Talukder",
   title: "General & Hepatobiliary Surgeon",
   designation: "Consultant",
